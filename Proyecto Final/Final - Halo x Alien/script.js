@@ -40,12 +40,30 @@ const esfera3 = {x: 1349, y: 234,radio: 80};
 let escenaActual = 0; //Variable de estado que indica cual esta activa
 //let estado = escena[escenaActual]; 
 
+//Llamada de vectrores Escenarios
+
+const hangar = new Image();
+
+hangar.src = "assets/Hangar vs1.svg";
+
 
 //Funciones de escenarios  ------------------------------------------------------
 function dibujarHangar(){
     
-    ctx.fillStyle = "#32174d";
+    ctx.fillStyle = "#131317";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.beginPath();
+    ctx.moveTo(120,40);
+    ctx.lineTo(125, 65);
+    ctx.lineTo(200, 35);
+    ctx.closePath();
+
+    ctx.fill();
+    ctx.fillStyle = "#dacf92";
+
+    
+    ctx.drawImage(hangar,-camaraX,0, mundoAncho,400);
     
     ctx.fillStyle = "white";
 
@@ -68,18 +86,6 @@ function dibujarPasillo(){
 
     POV();
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function dibujarCapsula(){
@@ -111,23 +117,23 @@ function dibujarHipersueno(){
 
 function POV(){
 
-    ctx.fillStyle = "#303030";
+    // ctx.fillStyle = "#303030";
 
-    ctx.fillRect(0,150,canvas.width,100);
+    // ctx.fillRect(0,150,canvas.width,100);
 
-    for(let x = 0; x < mundoAncho; x += 100){
+    // for(let x = 0; x < mundoAncho; x += 100){
 
-        ctx.strokeStyle = "#555";
+    //     ctx.strokeStyle = "#555";
 
-        ctx.beginPath();
-        ctx.moveTo(x - camaraX,150);
-        ctx.lineTo(x - camaraX,250);
-        ctx.stroke();
+    //     ctx.beginPath();
+    //     ctx.moveTo(x - camaraX,150);
+    //     ctx.lineTo(x - camaraX,250);
+    //     ctx.stroke();
 
-        camaraX = Math.max(0,camaraX);
+    //     camaraX = Math.max(0,camaraX);
 
-        camaraX = Math.min(camaraX,mundoAncho - vistaAncho);
-    }
+    //     camaraX = Math.min(camaraX,mundoAncho - vistaAncho);
+    //}
 }
 
 
